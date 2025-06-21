@@ -21,7 +21,8 @@ def subform():
     if request.method == 'POST':
         name = request.form['nm']
         number = request.form['number']  
-        return render_template("form.html", formname=name, formnum=number)
+        email = request.form['email']
+        return render_template("form.html", formname=name, formnum=number,formemail=email)
     else:
         return "Form not submitted properly....."
 

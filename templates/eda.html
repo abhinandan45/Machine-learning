@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDA Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #1e3a8a;
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #3749c1;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #1e3a8a;
+        }
+
+        .eda-image {
+            width: 80%;
+            max-width: 700px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-title {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/eda">EDA Analysis</a>
+        <a href="/predict">Predict Price</a>
+    </div>
+
+    <h2>Exploratory Data Analysis</h2>
+
+    <div>
+        <div class="img-title">Area vs Price</div>
+        <img src="{{ url_for('static', filename='area_vs_price.png') }}" class="eda-image">
+
+        <div class="img-title">Bathrooms vs Price</div>
+        <img src="{{ url_for('static', filename='bathrooms_vs_price.png') }}" class="eda-image">
+
+        <div class="img-title">Stories vs Price</div>
+        <img src="{{ url_for('static', filename='stories_vs_price.png') }}" class="eda-image">
+
+        <div class="img-title">AC vs Price</div>
+        <img src="{{ url_for('static', filename='ac_vs_price.png') }}" class="eda-image">
+
+        <div class="img-title">Furnishing vs Price</div>
+        <img src="{{ url_for('static', filename='furnishing_vs_price.png') }}" class="eda-image">
+    </div>
+
+</body>
+</html>

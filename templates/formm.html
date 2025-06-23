@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Form</title>
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <input type="text" name="area" placeholder="Enter Area"> <br><br>
+        <input type="text" name="bedrooms" placeholder="Enter bedroom number"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if pred %}
+    <h3>Predicted Price: {{ pred }}</h3>
+    {% endif %}
+</body>
+</html>

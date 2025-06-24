@@ -1,28 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head><title>Predict Price</title></head>
-<body>
-    <h2>Enter House Details</h2>
-    <form method="POST">
-        Area: <input type="text" name="area"><br><br>
-        Bathrooms: <input type="text" name="bathrooms"><br><br>
-        Stories: <input type="text" name="stories"><br><br>
-        Parking: <input type="text" name="parking"><br><br>
-        Air Conditioning (1/0): <input type="text" name="airconditioning"><br><br>
-        Semi-Furnished (1/0): <input type="text" name="semi_furnished"><br><br>
-        Unfurnished (1/0): <input type="text" name="unfurnished"><br><br>
-
-        <input type="submit" value="Predict">
-    </form>
-
-    {% if result %}
-        <h3>🏷️ Predicted Price: ₹{{ result | round(2) }}</h3>
-    {% endif %}
-
-    <br><a href="/"><button>Back to Home</button></a>
-</body>
-</html> -->
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +69,110 @@
         <input type="text" name="airconditioning" placeholder="Air Conditioning (1/0)" required><br>
         <input type="text" name="semi_furnished" placeholder="Semi-Furnished (1/0)" required><br>
         <input type="text" name="unfurnished" placeholder="Unfurnished (1/0)" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Predicted Price: ₹{{ result | round(2) }}</h2>
+    {% endif %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict House Price</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #1e3a8a;
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #3749c1;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        input, select {
+            padding: 10px;
+            width: 300px;
+            margin: 10px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/eda">EDA Analysis</a>
+        <a href="/predict">Predict Price</a>
+    </div>
+
+    <h2>Enter House Details</h2>
+    <form method="POST">
+        <input type="text" name="area" placeholder="Area (sq ft)" required><br>
+        <input type="text" name="bathrooms" placeholder="Number of Bathrooms" required><br>
+        <input type="text" name="stories" placeholder="Number of Stories" required><br>
+        <input type="text" name="parking" placeholder="Parking Spaces" required><br>
+
+        <label for="airconditioning">Air Conditioning:</label><br>
+        <select name="airconditioning" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="semi_furnished">Semi-Furnished:</label><br>
+        <select name="semi_furnished" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="unfurnished">Unfurnished:</label><br>
+        <select name="unfurnished" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
         <button type="submit">Predict</button>
     </form>
 

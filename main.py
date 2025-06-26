@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import joblib
+from sklearn.preprocessing import LabelEncoder
+
 
 app = Flask(__name__)
 model = joblib.load('model.pkl')
+
+
 
 @app.route("/prediction_form")
 def prediction_form():
